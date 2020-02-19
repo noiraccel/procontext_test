@@ -13,9 +13,9 @@ function Albums(props) {
       <input type="text" className="form-control mb-3" placeholder="Search" onChange={e => setSearchQuery(e.target.value)} />
       <div className="list-group">
         {filteredAlbums.map(album => (
-          <div className={"list-group-item list-group-item-action" + (props.currentAlbum && props.currentAlbum.id === album.id ? " active" : "")} key={album.id} onClick={() => props.onSelectAlbum(album)}>
+          <button type="button" className={"list-group-item list-group-item-action" + (props.currentAlbum && props.currentAlbum.id === album.id ? " active" : "")} key={album.id} onClick={() => props.onSelectAlbum(album)}>
             {album.title}
-          </div>
+          </button>
         ))}
       </div>
     </>
